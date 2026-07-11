@@ -54,6 +54,7 @@ export default function UuidPage() {
   return (
     <div className="page uuid-page">
       <header className="page-header">
+        <h1 className="page-title">{TOOL.name}</h1>
         <div className="header-actions">
           <input
             className="uuid-count-input"

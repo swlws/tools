@@ -45,6 +45,7 @@ export default function EditorPage() {
   return (
     <div className="page editor-page">
       <header className="page-header">
+        <h1 className="page-title">{TOOL.name}</h1>
         <div className="header-actions">
           <span className="chart-count">
             {mermaidCount > 0 ? `${mermaidCount} 个图表` : '暂无图表'}

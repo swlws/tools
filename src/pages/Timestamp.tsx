@@ -100,6 +100,7 @@ export default function TimestampPage() {
   return (
     <div className="page ts-page">
       <header className="page-header">
+        <h1 className="page-title">{TOOL.name}</h1>
         <div className="header-actions">
           <span className="ts-zone-label">时区</span>
           <div className="view-toggle">

@@ -62,6 +62,7 @@ export default function TextDiffPage() {
   return (
     <div className="page diff-page">
       <header className="page-header">
+        <h1 className="page-title">{TOOL.name}</h1>
         <div className="header-actions">
           <button className="btn btn-secondary" onClick={handleSwap}>交换</button>
           <button className="btn btn-secondary" onClick={handleClear}>清空</button>

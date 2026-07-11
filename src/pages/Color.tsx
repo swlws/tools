@@ -194,6 +194,7 @@ export default function ColorPage() {
   return (
     <div className="page color-page">
       <header className="page-header">
+        <h1 className="page-title">{TOOL.name}</h1>
         <div className="header-actions">
           <label className="color-picker-label">
             颜色选择器

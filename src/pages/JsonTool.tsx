@@ -162,6 +162,7 @@ export default function JsonToolPage() {
   return (
     <div className="page json-page">
       <header className="page-header">
+        <h1 className="page-title">{TOOL.name}</h1>
         <div className="header-actions">
           <button className="btn btn-secondary" onClick={handleFormat} disabled={!parsed.ok}>
             格式化

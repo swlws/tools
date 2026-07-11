@@ -83,6 +83,7 @@ export default function Base64Page() {
   return (
     <div className="page base64-page">
       <header className="page-header">
+        <h1 className="page-title">{TOOL.name}</h1>
         <div className="header-actions">
           <div className="view-toggle">
             <button

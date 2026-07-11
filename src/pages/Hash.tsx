@@ -58,6 +58,7 @@ export default function HashPage() {
   return (
     <div className="page hash-page">
       <header className="page-header">
+        <h1 className="page-title">{TOOL.name}</h1>
         <div className="header-actions">
           <button className="btn btn-secondary" onClick={handleClear}>
             清空

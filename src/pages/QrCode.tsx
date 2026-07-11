@@ -187,21 +187,8 @@ export default function QrCodePage() {
   return (
     <div className="page qr-page">
       <header className="page-header">
+        <h1 className="page-title">{TOOL.name}</h1>
         <div className="header-actions">
-          <div className="view-toggle">
-            <button
-              className={`toggle-btn ${mode === 'generate' ? 'active' : ''}`}
-              onClick={() => setMode('generate')}
-            >
-              生成
-            </button>
-            <button
-              className={`toggle-btn ${mode === 'decode' ? 'active' : ''}`}
-              onClick={() => setMode('decode')}
-            >
-              解析
-            </button>
-          </div>
           {mode === 'generate' && (
             <>
               <button
@@ -220,6 +207,20 @@ export default function QrCodePage() {
               </button>
             </>
           )}
+          <div className="view-toggle">
+            <button
+              className={`toggle-btn ${mode === 'generate' ? 'active' : ''}`}
+              onClick={() => setMode('generate')}
+            >
+              生成
+            </button>
+            <button
+              className={`toggle-btn ${mode === 'decode' ? 'active' : ''}`}
+              onClick={() => setMode('decode')}
+            >
+              解析
+            </button>
+          </div>
         </div>
       </header>
 

@@ -41,6 +41,7 @@ export default function UrlPage() {
   return (
     <div className="page url-page">
       <header className="page-header">
+        <h1 className="page-title">{TOOL.name}</h1>
         <div className="header-actions">
           <div className="view-toggle">
             <button

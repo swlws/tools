@@ -98,6 +98,7 @@ export default function JwtPage() {
   return (
     <div className="page jwt-page">
       <header className="page-header">
+        <h1 className="page-title">{TOOL.name}</h1>
         <div className="header-actions">
           <button className="btn btn-secondary" onClick={() => setInput('')}>
             清空
