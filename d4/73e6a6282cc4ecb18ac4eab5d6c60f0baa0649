@@ -1,0 +1,24 @@
+src/App.tsx
+  s_e4febbb74ae340::t_2bc736d883f3d3 66-69
+  s_e4febbb74ae340::t_5723e4cb78a330 104
+  s_e4febbb74ae340::t_72b017239fa985 1
+  s_e4febbb74ae340::t_d6922ec4f77eeb 21
+src/pages/Home.tsx
+  s_e4febbb74ae340::t_7a5a2c69254209 5,8,12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "d473e6a6282cc4ecb18ac4eab5d6c60f0baa0649",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
