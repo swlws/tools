@@ -81,7 +81,7 @@ description: 在「开发者工具箱」工程（React 19 + TypeScript + Vite）
 - 多步任务用 Task 工具跟踪进度
 - UI 调整是迭代式的，按用户逐条反馈微调，改完即验证
 - **未经用户明确要求，不 commit、不 push**
-- commit message 用中文、聚焦「为什么」，结尾带 `Co-Authored-By: Claude <noreply@anthropic.com>`
+- commit message 用中文、聚焦「为什么」
 
 ## 验证与部署
 

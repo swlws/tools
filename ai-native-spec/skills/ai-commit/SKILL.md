@@ -31,7 +31,7 @@ description: 提交 Git 暂存区（已 git add）的代码。按语义将同类
 
 - 类型：`feat`（新功能）/ `fix`（修复）/ `style`（样式/格式）/ `refactor`（重构）/ `docs`（文档）/ `chore`（杂项/配置）/ `test`
 - 同类型且相关的文件归为一组；不相关的功能拆成不同组
-- 每组拟定一条 commit message：中文、聚焦"为什么"，结尾附 `Co-Authored-By: Claude <noreply@anthropic.com>`
+- 每组拟定一条 commit message：中文、聚焦"为什么"
 
 ### 4. 展示并确认
 向用户列出分组方案：每组的类型、包含文件、拟定 message。等待用户明确同意（如"提交""可以"）。未同意不执行。
