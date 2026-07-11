@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 .superpowers/
+ai-native-tmp/
 
 # Editor directories and files
 .vscode/*
