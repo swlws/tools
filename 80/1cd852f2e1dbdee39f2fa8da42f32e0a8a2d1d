@@ -1,0 +1,27 @@
+index.html
+  s_e4febbb74ae340::t_5bbee2697e52b2 36
+  s_e4febbb74ae340::t_7fe91aa4794974 44
+  s_e4febbb74ae340::t_caa4b4c6637579 25
+  s_e4febbb74ae340::t_5fb9e0cd2a76df 27-29,43,51,58,65,72-149
+  s_e4febbb74ae340::t_4b011f02d84c99 26
+public/robots.txt
+  s_e4febbb74ae340::t_837ed669ce31df 4
+public/sitemap.xml
+  s_e4febbb74ae340::t_7f6b44e537a8f0 2,5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "801cd852f2e1dbdee39f2fa8da42f32e0a8a2d1d",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
