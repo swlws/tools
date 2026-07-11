@@ -7,6 +7,8 @@ const TOOL = TOOLS.find((t) => t.path === '/base64')!
 
 type Mode = 'encode' | 'decode'
 
+const SAMPLE_TEXT = '你好，开发者工具箱！Hello 🚀'
+
 // UTF-8 safe encode: text -> bytes -> base64 (btoa alone breaks on non-Latin1).
 function encodeBase64(text: string): string {
   const bytes = new TextEncoder().encode(text)
@@ -25,7 +27,7 @@ function decodeBase64(input: string): string {
 export default function Base64Page() {
   useSeo(TOOL.name, TOOL.description)
   const [mode, setMode] = useState<Mode>('encode')
-  const [input, setInput] = useState('')
+  const [input, setInput] = useState(SAMPLE_TEXT)
   // File-derived base64 output; takes precedence over text input when set.
   const [fileBase64, setFileBase64] = useState('')
 
