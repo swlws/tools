@@ -600,3 +600,43 @@
     align-items: flex-start;
   }
 }
+
+/* ===== Text Diff Page ===== */
+.diff-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f8fafc;
+}
+
+.diff-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.diff-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.diff-editor-wrapper {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ===== Diff Responsive ===== */
+@media (max-width: 768px) {
+  .diff-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

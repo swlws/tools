@@ -1,6 +1,7 @@
 import { Routes, Route, NavLink, Navigate } from 'react-router-dom'
 import EditorPage from '@/pages/Editor'
 import JsonToolPage from '@/pages/JsonTool'
+import TextDiffPage from '@/pages/TextDiff'
 import './App.css'
 
 function App() {
@@ -13,11 +14,15 @@ function App() {
         <NavLink to="/json" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
           JSON 工具
         </NavLink>
+        <NavLink to="/diff" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+          文本对比
+        </NavLink>
       </nav>
       <Routes>
         <Route path="/" element={<Navigate to="/editor" replace />} />
         <Route path="/editor" element={<EditorPage />} />
         <Route path="/json" element={<JsonToolPage />} />
+        <Route path="/diff" element={<TextDiffPage />} />
       </Routes>
     </>
   )

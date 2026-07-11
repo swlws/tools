@@ -1,0 +1,93 @@
+import { useState, useCallback, useRef } from 'react'
+import { DiffEditor, type OnMount } from '@monaco-editor/react'
+import type { editor } from 'monaco-editor'
+
+const LEFT_DEFAULT = `function greet(name) {
+  console.log('Hello, ' + name);
+  return true;
+}
+
+const items = [1, 2, 3];
+for (const item of items) {
+  process(item);
+}`
+
+const RIGHT_DEFAULT = `function greet(name: string): boolean {
+  console.log(\`Hello, \${name}\`);
+  return true;
+}
+
+const items = [1, 2, 3, 4];
+for (const item of items) {
+  processItem(item);
+}
+
+export default greet;`
+
+export default function TextDiffPage() {
+  const [original, setOriginal] = useState(LEFT_DEFAULT)
+  const [modified, setModified] = useState(RIGHT_DEFAULT)
+  const editorRef = useRef<editor.IStandaloneDiffEditor | null>(null)
+
+  const handleEditorMount: OnMount = useCallback((diffEditor) => {
+    editorRef.current = diffEditor
+    const origEditor = diffEditor.getOriginalEditor()
+    const modEditor = diffEditor.getModifiedEditor()
+
+    origEditor.onDidChangeModelContent(() => {
+      setOriginal(origEditor.getValue())
+    })
+    modEditor.onDidChangeModelContent(() => {
+      setModified(modEditor.getValue())
+    })
+  }, [])
+
+  const handleSwap = useCallback(() => {
+    const orig = original
+    const mod = modified
+    setOriginal(mod)
+    setModified(orig)
+  }, [original, modified])
+
+  const handleClear = useCallback(() => {
+    setOriginal('')
+    setModified('')
+  }, [])
+
+  return (
+    <div className="diff-page">
+      <header className="diff-header">
+        <h1 className="diff-title">文本对比</h1>
+        <div className="header-actions">
+          <button className="btn btn-secondary" onClick={handleSwap}>交换</button>
+          <button className="btn btn-secondary" onClick={handleClear}>清空</button>
+        </div>
+      </header>
+
+      <div className="diff-editor-wrapper">
+        <DiffEditor
+          original={original}
+          modified={modified}
+          language="plaintext"
+          theme="vs"
+          onMount={handleEditorMount}
+          options={{
+            readOnly: false,
+            originalEditable: true,
+            renderSideBySide: true,
+            enableSplitViewResizing: true,
+            scrollBeyondLastLine: false,
+            minimap: { enabled: false },
+            fontSize: 14,
+            lineNumbers: 'on',
+            renderLineHighlight: 'all',
+            folding: true,
+            wordWrap: 'on',
+            automaticLayout: true,
+          }}
+          height="100%"
+        />
+      </div>
+    </div>
+  )
+}
