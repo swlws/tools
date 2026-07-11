@@ -1,0 +1,21 @@
+package.json
+  s_e4febbb74ae340::t_5c20542aeb204a 14,27
+package-lock.json
+  s_e4febbb74ae340::t_f6eead42a79d60 12,25,909-931,1837-1843,4005-4007,4023
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "51353363f14d841337a9184b6b3a274597e16331",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
