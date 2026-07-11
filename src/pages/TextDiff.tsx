@@ -2,6 +2,7 @@ import { useState, useCallback, useRef } from 'react'
 import { DiffEditor, type DiffOnMount } from '@monaco-editor/react'
 import type { editor } from 'monaco-editor'
 import { useSeo } from '@/hooks/useSeo'
+import { useTheme } from '@/hooks/useTheme'
 import { TOOLS } from '@/tools'
 import Button from '@/components/Button'
 
@@ -31,6 +32,7 @@ export default greet;`
 
 export default function TextDiffPage() {
   useSeo(TOOL.name, TOOL.description)
+  const { resolved } = useTheme()
   const [original, setOriginal] = useState(LEFT_DEFAULT)
   const [modified, setModified] = useState(RIGHT_DEFAULT)
   const editorRef = useRef<editor.IStandaloneDiffEditor | null>(null)
@@ -76,7 +78,7 @@ export default function TextDiffPage() {
             original={original}
             modified={modified}
             language="plaintext"
-            theme="vs"
+            theme={resolved === 'dark' ? 'vs-dark' : 'vs'}
             onMount={handleEditorMount}
             options={{
               readOnly: false,
