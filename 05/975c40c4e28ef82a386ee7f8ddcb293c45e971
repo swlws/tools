@@ -1,0 +1,24 @@
+src/pages/TextDiff.tsx
+  s_e4febbb74ae340::t_36476d790cedb9 37
+  s_e4febbb74ae340::t_8d39ac1fb2266a 2
+vite.config.ts
+  s_e4febbb74ae340::t_c6a659375b9975 6
+.github/workflows/deploy.yml
+  s_e4febbb74ae340::t_93971d1e0877ef 1-44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "05975c40c4e28ef82a386ee7f8ddcb293c45e971",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
