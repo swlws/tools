@@ -1,0 +1,35 @@
+src/App.tsx
+  s_e4febbb74ae340::t_4605e09cd11ae6 1
+  s_e4febbb74ae340::t_9353430f556321 20-21,25,34-38
+  s_e4febbb74ae340::t_22d1938d7ec210 39
+src/hooks/useToolUsage.ts
+  s_e4febbb74ae340::t_6fdb4a540f2571 1-47
+src/App.css
+  s_e4febbb74ae340::t_fc6e6f2333c61e 1003-1004,1011,1015,1026-1027,1030,1050,1056,1062-1063
+  s_e4febbb74ae340::t_e671b1a17c7fb5 1043-1048
+src/pages/Home.tsx
+  s_e4febbb74ae340::t_b83c762d550109 13-16
+  s_e4febbb74ae340::t_8bc40dddcce41d 71-76,78-86,88-92
+  s_e4febbb74ae340::t_0f1880d147ca44 39,41
+  s_e4febbb74ae340::t_4d8361c844e598 40,42-44
+  s_e4febbb74ae340::t_87a9cb7a0f5884 77,87
+  s_e4febbb74ae340::t_07f514a22221c7 5,8-9
+  s_e4febbb74ae340::t_d0d775ea16fa33 26
+  s_e4febbb74ae340::t_b10d832e1bba86 45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "9df5b0962453f286144db0239f8ef069f545c691",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
