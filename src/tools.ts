@@ -70,6 +70,15 @@ export const TOOLS: Tool[] = [
     icon: '▦',
     category: 'generate',
   },
+  {
+    path: '/base64',
+    name: 'Base64 编解码',
+    navLabel: 'Base64',
+    description: '文本与 Base64 互转,支持中文（UTF-8),也可将本地文件转为 Base64。',
+    keywords: ['base64', '编码', '解码', 'encode', 'decode', '转换', 'utf-8', '文件', 'dataurl'],
+    icon: '⇄',
+    category: 'convert',
+  },
 ]
 
 export interface ToolGroup extends Category {

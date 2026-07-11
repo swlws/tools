@@ -6,6 +6,7 @@ import JsonToolPage from '@/pages/JsonTool'
 import TextDiffPage from '@/pages/TextDiff'
 import TimestampPage from '@/pages/Timestamp'
 import QrCodePage from '@/pages/QrCode'
+import Base64Page from '@/pages/Base64'
 import Logo from '@/components/Logo'
 import { groupedTools } from '@/tools'
 import './App.css'
@@ -104,6 +105,7 @@ function App() {
         <Route path="/diff" element={<TextDiffPage />} />
         <Route path="/timestamp" element={<TimestampPage />} />
         <Route path="/qrcode" element={<QrCodePage />} />
+        <Route path="/base64" element={<Base64Page />} />
       </Routes>
     </>
   )
