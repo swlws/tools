@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react'
+import Button from '@/components/Button'
 
 interface CopyButtonProps {
   text: string
@@ -13,8 +14,8 @@ export default function CopyButton({ text, disabled }: CopyButtonProps) {
     window.setTimeout(() => setCopied(false), 1200)
   }, [text])
   return (
-    <button className="btn btn-secondary" onClick={handle} disabled={disabled}>
+    <Button onClick={handle} disabled={disabled}>
       {copied ? '已复制' : '复制'}
-    </button>
+    </Button>
   )
 }
