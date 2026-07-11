@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { TOOLS } from '@/tools'
 import { useSeo } from '@/hooks/useSeo'
+import Logo from '@/components/Logo'
 
 export default function HomePage() {
   useSeo('首页', '开发者工具箱:Markdown 编辑器、JSON 可视化、文本对比、时间戳工具,免费在线使用。')
@@ -20,6 +21,7 @@ export default function HomePage() {
     <div className="page home-page">
       <div className="home-body">
         <header className="home-hero">
+          <Logo size={64} idSuffix="hero" className="home-logo" />
           <h1 className="home-title">开发者工具箱</h1>
           <p className="home-subtitle">常用的前端与开发辅助工具,免费、无需登录、本地运行。</p>
           <input
