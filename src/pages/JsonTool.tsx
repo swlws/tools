@@ -155,9 +155,8 @@ export default function JsonToolPage() {
   }, [])
 
   return (
-    <div className="json-page">
-      <header className="json-header">
-        <h1 className="json-title">JSON 可视化工具</h1>
+    <div className="page json-page">
+      <header className="page-header">
         <div className="header-actions">
           <button className="btn btn-secondary" onClick={handleFormat} disabled={!parsed.ok}>
             格式化

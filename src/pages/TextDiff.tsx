@@ -55,9 +55,8 @@ export default function TextDiffPage() {
   }, [])
 
   return (
-    <div className="diff-page">
-      <header className="diff-header">
-        <h1 className="diff-title">文本对比</h1>
+    <div className="page diff-page">
+      <header className="page-header">
         <div className="header-actions">
           <button className="btn btn-secondary" onClick={handleSwap}>交换</button>
           <button className="btn btn-secondary" onClick={handleClear}>清空</button>
@@ -65,28 +64,30 @@ export default function TextDiffPage() {
       </header>
 
       <div className="diff-editor-wrapper">
-        <DiffEditor
-          original={original}
-          modified={modified}
-          language="plaintext"
-          theme="vs"
-          onMount={handleEditorMount}
-          options={{
-            readOnly: false,
-            originalEditable: true,
-            renderSideBySide: true,
-            enableSplitViewResizing: true,
-            scrollBeyondLastLine: false,
-            minimap: { enabled: false },
-            fontSize: 14,
-            lineNumbers: 'on',
-            renderLineHighlight: 'all',
-            folding: true,
-            wordWrap: 'on',
-            automaticLayout: true,
-          }}
-          height="100%"
-        />
+        <div className="diff-card">
+          <DiffEditor
+            original={original}
+            modified={modified}
+            language="plaintext"
+            theme="vs"
+            onMount={handleEditorMount}
+            options={{
+              readOnly: false,
+              originalEditable: true,
+              renderSideBySide: true,
+              enableSplitViewResizing: true,
+              scrollBeyondLastLine: false,
+              minimap: { enabled: false },
+              fontSize: 14,
+              lineNumbers: 'on',
+              renderLineHighlight: 'all',
+              folding: true,
+              wordWrap: 'on',
+              automaticLayout: true,
+            }}
+            height="100%"
+          />
+        </div>
       </div>
     </div>
   )

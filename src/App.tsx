@@ -8,6 +8,10 @@ function App() {
   return (
     <>
       <nav className="nav-bar">
+        <span className="nav-brand">
+          <span className="nav-brand-dot" />
+          开发者工具箱
+        </span>
         <NavLink to="/editor" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
           Markdown 编辑器
         </NavLink>

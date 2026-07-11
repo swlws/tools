@@ -38,9 +38,8 @@ export default function EditorPage() {
   }
 
   return (
-    <div className="editor-page">
-      <header className="editor-header">
-        <h1 className="editor-title">Markdown + Mermaid 编辑器</h1>
+    <div className="page editor-page">
+      <header className="page-header">
         <div className="header-actions">
           <span className="chart-count">
             {mermaidCount > 0 ? `${mermaidCount} 个图表` : '暂无图表'}
