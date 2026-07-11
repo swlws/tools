@@ -17,6 +17,7 @@ import RadixPage from '@/pages/Radix'
 import CronPage from '@/pages/Cron'
 import YamlJsonPage from '@/pages/YamlJson'
 import Logo from '@/components/Logo'
+import ThemeToggle from '@/components/ThemeToggle'
 import { groupedTools, TOOLS } from '@/tools'
 import { recordToolUse } from '@/hooks/useToolUsage'
 import './App.css'
@@ -82,6 +83,8 @@ function App() {
             </div>
           ))}
         </div>
+
+        <ThemeToggle />
 
         <button
           className="nav-hamburger"

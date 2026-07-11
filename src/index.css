@@ -29,6 +29,43 @@
   --color-surface-muted: #f1f5f9;
   --bg: #f4f6fb;
 
+  /* Primary-tinted surfaces (soft blue highlights, secondary buttons) */
+  --color-primary-soft: #eff6ff;
+  --color-primary-soft-hover: #dbeafe;
+  --color-primary-soft-text: #1e3a8a;
+  --color-primary-soft-border: #bfdbfe;
+  --color-primary-soft-border-hover: #93c5fd;
+  --on-primary: #ffffff;
+  --ring: rgba(37, 99, 235, 0.12);
+  --ring-danger: rgba(220, 38, 38, 0.12);
+
+  /* Status colors: text / bg / border per state */
+  --color-danger: #dc2626;
+  --color-danger-strong: #991b1b;
+  --color-danger-bg: #fef2f2;
+  --color-danger-border: #fecaca;
+  --color-success: #16a34a;
+  --color-success-bg: #f0fdf4;
+  --color-success-border: #bbf7d0;
+  --color-warning: #d97706;
+  --color-warning-bg: #fffbeb;
+  --color-warning-border: #fde68a;
+
+  /* Code block (dark surface even in light mode) + inline code accent */
+  --color-code-bg: #1e293b;
+  --color-code-text: #e2e8f0;
+  --color-inline-code: #be185d;
+
+  /* Text-highlight mark (regex matches, search hits) */
+  --color-mark-bg: #fde68a;
+  --color-mark-text: #92400e;
+
+  /* Misc faint accents */
+  --color-th-text: #475569;
+  --color-dot: #cbd5e1;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #94a3b8;
+
   /* ===== Fonts ===== */
   --font-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
 
@@ -59,6 +96,67 @@
   --transition: 150ms ease;
 }
 
+/* ===== Dark theme =====
+   The resolved theme is always written to <html data-theme="light|dark"> — by
+   the pre-paint script in index.html on load, and by useTheme thereafter. When
+   the user's preference is "system", the resolved value tracks the OS via a
+   matchMedia listener. So CSS only needs to override on [data-theme="dark"]. */
+:root[data-theme='dark'] {
+  color: #e5e9f0;
+  background: #0f1420;
+
+  --color-primary: #3b82f6;
+  --color-primary-strong: #60a5fa;
+  --color-accent: #38bdf8;
+  --color-text: #e5e9f0;
+  --color-text-soft: #cbd5e1;
+  --color-muted: #94a3b8;
+  --color-faint: #64748b;
+  --color-border: #2a3446;
+  --color-border-soft: #1e2636;
+  --color-surface: #161c28;
+  --color-surface-alt: #1b2230;
+  --color-surface-muted: #212a3a;
+  --bg: #0f1420;
+
+  --color-primary-soft: #17233b;
+  --color-primary-soft-hover: #1e2f4d;
+  --color-primary-soft-text: #93c5fd;
+  --color-primary-soft-border: #2f4a6d;
+  --color-primary-soft-border-hover: #3b5a86;
+  --on-primary: #ffffff;
+  --ring: rgba(59, 130, 246, 0.28);
+  --ring-danger: rgba(248, 113, 113, 0.28);
+
+  --color-danger: #f87171;
+  --color-danger-strong: #fca5a5;
+  --color-danger-bg: #2a1618;
+  --color-danger-border: #5b2626;
+  --color-success: #4ade80;
+  --color-success-bg: #14251a;
+  --color-success-border: #285238;
+  --color-warning: #fbbf24;
+  --color-warning-bg: #2a2010;
+  --color-warning-border: #5a4415;
+
+  --color-code-bg: #0c111b;
+  --color-code-text: #d6deeb;
+  --color-inline-code: #f472b6;
+
+  --color-mark-bg: #78591c;
+  --color-mark-text: #fde68a;
+
+  --color-th-text: #94a3b8;
+  --color-dot: #3a4457;
+  --scrollbar-thumb: #3a4457;
+  --scrollbar-thumb-hover: #4b5568;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-primary: 0 2px 8px rgba(37, 99, 235, 0.4);
+}
+
 *,
 *::before,
 *::after {
@@ -75,12 +173,14 @@ body {
   height: 100vh;
   overflow: hidden;
   background: var(--bg);
+  color: var(--color-text);
+  transition: background-color var(--transition), color var(--transition);
 }
 
 /* ===== Custom Scrollbars ===== */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #cbd5e1 transparent;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
 }
 
 ::-webkit-scrollbar {
@@ -93,14 +193,14 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: var(--scrollbar-thumb);
   border: 2px solid transparent;
   background-clip: content-box;
   border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: var(--scrollbar-thumb-hover);
   background-clip: content-box;
 }
 
