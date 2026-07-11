@@ -24,3 +24,4 @@ ai-native-tmp/
 *.njsproj
 *.sln
 *.sw?
+*.lock.json
