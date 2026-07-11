@@ -1,4 +1,5 @@
-import { Routes, Route, NavLink } from 'react-router-dom'
+import { useState, useCallback } from 'react'
+import { Routes, Route, NavLink, useLocation } from 'react-router-dom'
 import HomePage from '@/pages/Home'
 import EditorPage from '@/pages/Editor'
 import JsonToolPage from '@/pages/JsonTool'
@@ -6,27 +7,96 @@ import TextDiffPage from '@/pages/TextDiff'
 import TimestampPage from '@/pages/Timestamp'
 import QrCodePage from '@/pages/QrCode'
 import Logo from '@/components/Logo'
-import { TOOLS } from '@/tools'
+import { groupedTools } from '@/tools'
 import './App.css'
 
+const GROUPS = groupedTools()
+
 function App() {
+  const location = useLocation()
+  const [mobileOpen, setMobileOpen] = useState(false)
+  // Category whose dropdown is force-collapsed after a selection, until the
+  // pointer leaves it (otherwise CSS :hover keeps re-opening the menu).
+  const [collapsed, setCollapsed] = useState<string | null>(null)
+
+  const activeCategory = GROUPS.find((g) =>
+    g.tools.some((t) => t.path === location.pathname),
+  )?.key
+
+  const closeMobile = useCallback(() => setMobileOpen(false), [])
+
   return (
     <>
       <nav className="nav-bar">
-        <NavLink to="/" className="nav-brand">
+        <NavLink to="/" className="nav-brand" onClick={closeMobile}>
           <Logo size={22} idSuffix="nav" />
           开发者工具箱
         </NavLink>
-        {TOOLS.map((tool) => (
-          <NavLink
-            key={tool.path}
-            to={tool.path}
-            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-          >
-            {tool.navLabel}
-          </NavLink>
-        ))}
+
+        <div className="nav-groups">
+          {GROUPS.map((group) => (
+            <div
+              key={group.key}
+              className={`nav-group ${activeCategory === group.key ? 'active' : ''} ${
+                collapsed === group.key ? 'collapsed' : ''
+              }`}
+              onMouseLeave={() => setCollapsed((c) => (c === group.key ? null : c))}
+            >
+              <button className="nav-group-trigger" type="button">
+                {group.label}
+                <span className="nav-group-caret">▾</span>
+              </button>
+              <div className="nav-dropdown">
+                {group.tools.map((tool) => (
+                  <NavLink
+                    key={tool.path}
+                    to={tool.path}
+                    onClick={() => setCollapsed(group.key)}
+                    className={({ isActive }) =>
+                      `nav-dropdown-item ${isActive ? 'active' : ''}`
+                    }
+                  >
+                    <span className="nav-dropdown-icon">{tool.icon}</span>
+                    {tool.navLabel}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <button
+          className="nav-hamburger"
+          type="button"
+          aria-label="菜单"
+          onClick={() => setMobileOpen((v) => !v)}
+        >
+          {mobileOpen ? '✕' : '☰'}
+        </button>
       </nav>
+
+      {mobileOpen && (
+        <div className="nav-mobile" onClick={closeMobile}>
+          {GROUPS.map((group) => (
+            <div key={group.key} className="nav-mobile-group">
+              <span className="nav-mobile-label">{group.label}</span>
+              {group.tools.map((tool) => (
+                <NavLink
+                  key={tool.path}
+                  to={tool.path}
+                  className={({ isActive }) =>
+                    `nav-mobile-item ${isActive ? 'active' : ''}`
+                  }
+                >
+                  <span className="nav-dropdown-icon">{tool.icon}</span>
+                  {tool.navLabel}
+                </NavLink>
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/editor" element={<EditorPage />} />

@@ -1,11 +1,21 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { TOOLS } from '@/tools'
+import { TOOLS, groupedTools, type Tool } from '@/tools'
 import { useSeo } from '@/hooks/useSeo'
 import Logo from '@/components/Logo'
 
+function ToolCard({ tool }: { tool: Tool }) {
+  return (
+    <Link to={tool.path} className="tool-card">
+      <span className="tool-card-icon">{tool.icon}</span>
+      <span className="tool-card-name">{tool.name}</span>
+      <span className="tool-card-desc">{tool.description}</span>
+    </Link>
+  )
+}
+
 export default function HomePage() {
-  useSeo('首页', '开发者工具箱:Markdown 编辑器、JSON 可视化、文本对比、时间戳工具,免费在线使用。')
+  useSeo('首页', '开发者工具箱:Markdown 编辑器、JSON 可视化、文本对比、时间戳工具、二维码,免费在线使用。')
 
   const [query, setQuery] = useState('')
 
@@ -16,6 +26,9 @@ export default function HomePage() {
       [t.name, t.description, ...t.keywords].some((s) => s.toLowerCase().includes(q)),
     )
   }, [query])
+
+  const groups = useMemo(() => groupedTools(filtered), [filtered])
+  const searching = query.trim() !== ''
 
   return (
     <div className="page home-page">
@@ -33,18 +46,25 @@ export default function HomePage() {
           />
         </header>
 
-        {filtered.length > 0 ? (
+        {filtered.length === 0 ? (
+          <p className="home-empty">没有匹配「{query}」的工具</p>
+        ) : searching ? (
           <div className="home-grid">
             {filtered.map((tool) => (
-              <Link key={tool.path} to={tool.path} className="tool-card">
-                <span className="tool-card-icon">{tool.icon}</span>
-                <span className="tool-card-name">{tool.name}</span>
-                <span className="tool-card-desc">{tool.description}</span>
-              </Link>
+              <ToolCard key={tool.path} tool={tool} />
             ))}
           </div>
         ) : (
-          <p className="home-empty">没有匹配「{query}」的工具</p>
+          groups.map((group) => (
+            <section key={group.key} className="home-section">
+              <h2 className="home-section-title">{group.label}</h2>
+              <div className="home-grid">
+                {group.tools.map((tool) => (
+                  <ToolCard key={tool.path} tool={tool} />
+                ))}
+              </div>
+            </section>
+          ))
         )}
       </div>
     </div>
