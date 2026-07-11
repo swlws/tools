@@ -1,0 +1,24 @@
+src/pages/Timestamp.tsx
+  s_e4febbb74ae340::t_3e5f7952090b9a 1-275
+src/App.tsx
+  s_e4febbb74ae340::t_1cdee0b5304977 5
+  s_e4febbb74ae340::t_307ce8bf729b0d 25-27,34
+src/App.css
+  s_e4febbb74ae340::t_4111a9f88acf20 625-775
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "a25d7401ba0353756c22820c3e3095e3bc96304e",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
