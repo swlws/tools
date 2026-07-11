@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef } from 'react'
-import { DiffEditor, type OnMount } from '@monaco-editor/react'
+import { DiffEditor, type DiffOnMount } from '@monaco-editor/react'
 import type { editor } from 'monaco-editor'
 import { useSeo } from '@/hooks/useSeo'
 import { TOOLS } from '@/tools'
@@ -34,7 +34,7 @@ export default function TextDiffPage() {
   const [modified, setModified] = useState(RIGHT_DEFAULT)
   const editorRef = useRef<editor.IStandaloneDiffEditor | null>(null)
 
-  const handleEditorMount: OnMount = useCallback((diffEditor) => {
+  const handleEditorMount: DiffOnMount = useCallback((diffEditor) => {
     editorRef.current = diffEditor
     const origEditor = diffEditor.getOriginalEditor()
     const modEditor = diffEditor.getModifiedEditor()
