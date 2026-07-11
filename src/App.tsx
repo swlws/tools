@@ -12,6 +12,10 @@ import JwtPage from '@/pages/Jwt'
 import HashPage from '@/pages/Hash'
 import UuidPage from '@/pages/Uuid'
 import ColorPage from '@/pages/Color'
+import RegexPage from '@/pages/Regex'
+import RadixPage from '@/pages/Radix'
+import CronPage from '@/pages/Cron'
+import YamlJsonPage from '@/pages/YamlJson'
 import Logo from '@/components/Logo'
 import { groupedTools } from '@/tools'
 import './App.css'
@@ -116,6 +120,10 @@ function App() {
         <Route path="/hash" element={<HashPage />} />
         <Route path="/uuid" element={<UuidPage />} />
         <Route path="/color" element={<ColorPage />} />
+        <Route path="/regex" element={<RegexPage />} />
+        <Route path="/radix" element={<RadixPage />} />
+        <Route path="/cron" element={<CronPage />} />
+        <Route path="/yaml" element={<YamlJsonPage />} />
       </Routes>
     </>
   )

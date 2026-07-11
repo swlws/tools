@@ -124,6 +124,42 @@ export const TOOLS: Tool[] = [
     icon: '🎨',
     category: 'convert',
   },
+  {
+    path: '/regex',
+    name: '正则表达式测试',
+    navLabel: '正则测试',
+    description: '实时测试正则表达式,高亮匹配、展示分组与替换预览,支持常用 flags。',
+    keywords: ['正则', 'regex', 'regexp', '正则表达式', '匹配', '测试', '分组', '替换', 'flags'],
+    icon: '.*',
+    category: 'compare',
+  },
+  {
+    path: '/radix',
+    name: '进制转换',
+    navLabel: '进制转换',
+    description: '二进制/八进制/十进制/十六进制实时互转,支持 2-36 任意进制与大整数。',
+    keywords: ['进制', '进制转换', 'radix', '二进制', '八进制', '十进制', '十六进制', 'binary', 'hex', 'octal', 'decimal', 'base', '转换'],
+    icon: '01',
+    category: 'convert',
+  },
+  {
+    path: '/cron',
+    name: 'Cron 表达式解析',
+    navLabel: 'Cron 解析',
+    description: '解析 cron 表达式,生成中文可读描述并预测未来执行时间,支持 5/6 段格式。',
+    keywords: ['cron', 'crontab', '定时', '定时任务', '表达式', '解析', '调度', 'schedule', '执行时间'],
+    icon: '⏲',
+    category: 'convert',
+  },
+  {
+    path: '/yaml',
+    name: 'YAML ↔ JSON 转换',
+    navLabel: 'YAML/JSON',
+    description: 'YAML 与 JSON 双向互转,实时转换并提示语法错误,纯本地运行。',
+    keywords: ['yaml', 'json', 'yml', '转换', '互转', 'convert', '格式化', '配置'],
+    icon: '⇄',
+    category: 'convert',
+  },
 ]
 
 export interface ToolGroup extends Category {
