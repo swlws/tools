@@ -1,0 +1,47 @@
+src/pages/Timestamp.tsx
+  s_e4febbb74ae340::t_36aaf8383059db 107-114
+  s_e4febbb74ae340::t_a078471964598c 5
+src/pages/Base64.tsx
+  s_e4febbb74ae340::t_d8cc5d9d584be5 5-6
+  s_e4febbb74ae340::t_e8b39cca333e27 90-99
+src/pages/TextDiff.tsx
+  s_e4febbb74ae340::t_ffb8a2fe5d954a 68-69
+  s_e4febbb74ae340::t_549f6757befc0d 6
+src/pages/JsonTool.tsx
+  s_e4febbb74ae340::t_a57fa43718333e 169,171-172,174-175,180,182,184,187-194
+  s_e4febbb74ae340::t_9ed713b1f655f8 5-6
+src/pages/Jwt.tsx
+  s_e4febbb74ae340::t_13bb9421b5184b 5
+  s_e4febbb74ae340::t_f37afcf92362b8 104
+src/pages/Uuid.tsx
+  s_e4febbb74ae340::t_ef2467eb100c21 69-70,72-73,75
+  s_e4febbb74ae340::t_49faaa57de6800 5-6
+src/pages/Hash.tsx
+  s_e4febbb74ae340::t_86a94409c7db55 5
+  s_e4febbb74ae340::t_2cc198a49e61e6 64
+src/pages/Url.tsx
+  s_e4febbb74ae340::t_21faa9e858aa35 5-6
+  s_e4febbb74ae340::t_5ae199384c1ab2 48-57
+src/pages/QrCode.tsx
+  s_e4febbb74ae340::t_d4a5d65d1e8fe9 7-8
+  s_e4febbb74ae340::t_f8af535f36b38e 196,198-199,201,204-211
+src/pages/Editor.tsx
+  s_e4febbb74ae340::t_6b8e1a6d1b042c 54,56-57,59
+  s_e4febbb74ae340::t_804e09f77f20fb 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "c8d3a2f25645a5a28d1ca3d26aaca58c01700603",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
