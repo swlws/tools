@@ -1,0 +1,42 @@
+src/pages/Base64.tsx
+  s_e4febbb74ae340::t_7310146fcd886b 86
+src/pages/Editor.tsx
+  s_e4febbb74ae340::t_dfa31aad99d7df 48
+src/App.css
+  s_e4febbb74ae340::t_47ce0e27f7a57e 15,25,29
+src/pages/Hash.tsx
+  s_e4febbb74ae340::t_af228175829348 61
+src/pages/TextDiff.tsx
+  s_e4febbb74ae340::t_df5065f054d1d2 65
+src/pages/Uuid.tsx
+  s_e4febbb74ae340::t_60f8fe6d1ac811 57
+src/pages/Timestamp.tsx
+  s_e4febbb74ae340::t_0b15bf464682dd 103
+src/pages/Url.tsx
+  s_e4febbb74ae340::t_262065cdf836b6 44
+src/pages/JsonTool.tsx
+  s_e4febbb74ae340::t_525ec5cbfd7ed8 165
+src/pages/QrCode.tsx
+  s_e4febbb74ae340::t_153d1c629c0764 210-223
+  s_e4febbb74ae340::t_61fd51e319f824 190
+src/pages/Jwt.tsx
+  s_e4febbb74ae340::t_a4eb5afe4a8387 101
+src/pages/Color.tsx
+  s_e4febbb74ae340::t_5936d539948a9b 197
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "5772c077c533cc1f0872a8142ae99ba370b13520",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
