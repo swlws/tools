@@ -1,0 +1,28 @@
+src/App.tsx
+  s_e4febbb74ae340::t_7d5be5eaeef89a 7
+  s_e4febbb74ae340::t_db99c44a4ba236 16
+.gitignore
+  s_e4febbb74ae340::t_310a27fa93f2dd 14
+src/components/Logo.tsx
+  s_e4febbb74ae340::t_b7ec3f55996271 1-40
+index.html
+  s_e4febbb74ae340::t_725f0edcc26b2c 5
+public/logo.svg
+  s_e4febbb74ae340::t_47ab7150f5eaf3 1-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "30ce78196e2f4bc9e9465942c8300a191ecabb77",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
