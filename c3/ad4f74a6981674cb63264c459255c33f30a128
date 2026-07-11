@@ -1,0 +1,22 @@
+src/App.css
+  s_e4febbb74ae340::t_492866c0f7da52 783-788
+src/pages/Home.tsx
+  s_e4febbb74ae340::t_b47944e384083f 5
+  s_e4febbb74ae340::t_a5d8aecd76e24b 24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "c3ad4f74a6981674cb63264c459255c33f30a128",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
