@@ -1,11 +1,13 @@
+import { Routes, Route, Navigate } from 'react-router-dom'
+import EditorPage from '@/pages/Editor'
 import './App.css'
 
 function App() {
   return (
-    <div className="app">
-      <h1>管理系统</h1>
-      <p>系统初始化完成，请开始开发。</p>
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigate to="/editor" replace />} />
+      <Route path="/editor" element={<EditorPage />} />
+    </Routes>
   )
 }
 
