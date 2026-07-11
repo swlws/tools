@@ -1,0 +1,27 @@
+src/components/CopyButton.tsx
+  s_e4febbb74ae340::t_98a7ccb3baa61c 1-20
+src/pages/QrCode.tsx
+  s_e4febbb74ae340::t_1e2cb2fab731a6 6
+  s_e4febbb74ae340::t_677cf33b4d6219 123
+ai-native-spec/skills/tools-dev-skill/SKILL.md
+  s_e4febbb74ae340::t_245c6a1e725dc0 56
+src/pages/Timestamp.tsx
+  s_e4febbb74ae340::t_49b6ba996bede4 4
+  s_e4febbb74ae340::t_d04420b4848122 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "8a057cba7941d32ca7370baaca6405b9bf483786",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
