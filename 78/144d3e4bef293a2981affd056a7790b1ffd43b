@@ -1,0 +1,21 @@
+src/pages/TextDiff.tsx
+  s_e4febbb74ae340::t_c71603830f0e99 5
+  s_e4febbb74ae340::t_5db10444367ca1 81
+  s_e4febbb74ae340::t_025b601195893e 35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "78144d3e4bef293a2981affd056a7790b1ffd43b",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
