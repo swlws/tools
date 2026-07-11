@@ -1,0 +1,41 @@
+src/pages/Editor.tsx
+  s_e4febbb74ae340::t_5a53ccb3c3fbb3 41-42
+src/index.css
+  s_e4febbb74ae340::t_ec5c4808647f96 73-100
+  s_e4febbb74ae340::t_70568a1f44ef14 71-72
+  s_e4febbb74ae340::t_8659c8cb5fa197 16-55
+  s_e4febbb74ae340::t_7c1da62f371339 116-119
+src/pages/TextDiff.tsx
+  s_e4febbb74ae340::t_8aa01047432d51 58-59
+  s_e4febbb74ae340::t_1d3bcb2f3a2c6b 67-90
+src/App.tsx
+  s_e4febbb74ae340::t_30eb97df6e8802 11-14
+src/pages/JsonTool.tsx
+  s_e4febbb74ae340::t_6a8613902c67d6 158-159
+src/App.css
+  s_e4febbb74ae340::t_8de853da3efa65 115
+  s_e4febbb74ae340::t_bd0a415bf864f1 331
+  s_e4febbb74ae340::t_7234a7d82b3e4d 613,616,618
+  s_e4febbb74ae340::t_9ad5a3c54ddb89 7
+  s_e4febbb74ae340::t_b59a76cf3fd066 5-6,610-611
+  s_e4febbb74ae340::t_35c6062b30a49e 15,17
+  s_e4febbb74ae340::t_6bf3717736abff 49-51
+  s_e4febbb74ae340::t_11ee76ece9cbde 1-2,8,11-12,16,18-19,23,27-28,34,39-40,53-58,62,68-69,73,80,85,93-94,103-107,114,116-118,125,133,137,140-141,146,153-154,159,165,168-169,174,177,181,184,194,198,203-204,207,216-217,222,228,231,235,240,242,244,249-254,268-270,283,287,293,312,326-330,332-350,354,357,359-360,364-365,369-370,378-379,387-391,396,400,403-404,409,415,420-421,424,430,435,445,448-451,454-460,463,469,475,485,487,493,495-496,500,506-508,512,517,529,540-541,545,550,554,561-562,582,588,620-623
+  s_e4febbb74ae340::t_ca7433d25fb993 609
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "9df7ade8e3462351937a7b429102e3db2bb9593b",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
