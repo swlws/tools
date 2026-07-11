@@ -1,6 +1,7 @@
-import { useState, useEffect, useMemo, useCallback } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useSeo } from '@/hooks/useSeo'
 import { TOOLS } from '@/tools'
+import CopyButton from '@/components/CopyButton'
 
 const TOOL = TOOLS.find((t) => t.path === '/timestamp')!
 
@@ -51,20 +52,6 @@ function parseDateInput(input: string, zone: Zone): number | null {
       ? Date.UTC(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5])
       : new Date(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]).getTime()
   return Number.isNaN(ms) ? null : ms
-}
-
-function CopyButton({ text, disabled }: { text: string; disabled?: boolean }) {
-  const [copied, setCopied] = useState(false)
-  const handle = useCallback(async () => {
-    await navigator.clipboard.writeText(text)
-    setCopied(true)
-    window.setTimeout(() => setCopied(false), 1200)
-  }, [text])
-  return (
-    <button className="btn btn-secondary" onClick={handle} disabled={disabled}>
-      {copied ? '已复制' : '复制'}
-    </button>
-  )
 }
 
 export default function TimestampPage() {

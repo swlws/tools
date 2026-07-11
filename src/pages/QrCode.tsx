@@ -3,6 +3,7 @@ import QRCode from 'qrcode'
 import jsQR from 'jsqr'
 import { useSeo } from '@/hooks/useSeo'
 import { TOOLS } from '@/tools'
+import CopyButton from '@/components/CopyButton'
 
 const TOOL = TOOLS.find((t) => t.path === '/qrcode')!
 
@@ -36,7 +37,6 @@ function DecodePanel() {
   const [error, setError] = useState('')
   const [preview, setPreview] = useState('')
   const [dragOver, setDragOver] = useState(false)
-  const [copied, setCopied] = useState(false)
   const inputRef = useRef<HTMLInputElement | null>(null)
 
   const handleFile = useCallback((file: File | undefined) => {
@@ -72,12 +72,6 @@ function DecodePanel() {
     },
     [handleFile],
   )
-
-  const handleCopy = useCallback(async () => {
-    await navigator.clipboard.writeText(result)
-    setCopied(true)
-    window.setTimeout(() => setCopied(false), 1200)
-  }, [result])
 
   return (
     <div className="qr-body">
@@ -126,9 +120,7 @@ function DecodePanel() {
             <>
               <textarea className="qr-textarea" value={result} readOnly spellCheck={false} />
               <div className="qr-result-actions">
-                <button className="btn btn-secondary" onClick={handleCopy}>
-                  {copied ? '已复制' : '复制'}
-                </button>
+                <CopyButton text={result} />
               </div>
             </>
           ) : (

@@ -53,6 +53,7 @@ description: 在「开发者工具箱」工程（React 19 + TypeScript + Vite）
 - 页面标题**不写**在页内（导航已表达），`.page-header` 只放右侧操作区
 - 复用现有类：`.btn` / `.btn-secondary`、`.view-toggle` / `.toggle-btn`、`.pane-header`（`min-height: 39px` 保证左右标题栏等高）、`.pane-label`、`.error-badge` / `.success-badge` / `.error-hint`
 - 状态徽标放进 `.pane-header`，避免有无徽标导致左右高度不一致
+- **复用共享组件**：跨页面重复的交互控件提取到 `src/components/`，不在页面内重复定义。已有：`CopyButton`（`src/components/CopyButton.tsx`，`<CopyButton text={...} />`，自带「已复制」反馈），复制文本一律用它
 
 ## 样式规范
 
