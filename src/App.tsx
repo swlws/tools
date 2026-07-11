@@ -4,6 +4,7 @@ import EditorPage from '@/pages/Editor'
 import JsonToolPage from '@/pages/JsonTool'
 import TextDiffPage from '@/pages/TextDiff'
 import TimestampPage from '@/pages/Timestamp'
+import Logo from '@/components/Logo'
 import { TOOLS } from '@/tools'
 import './App.css'
 
@@ -12,7 +13,7 @@ function App() {
     <>
       <nav className="nav-bar">
         <NavLink to="/" className="nav-brand">
-          <span className="nav-brand-dot" />
+          <Logo size={22} idSuffix="nav" />
           开发者工具箱
         </NavLink>
         {TOOLS.map((tool) => (
