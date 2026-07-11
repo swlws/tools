@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSeo } from '@/hooks/useSeo'
 import { TOOLS } from '@/tools'
 import CopyButton from '@/components/CopyButton'
+import Button from '@/components/Button'
 
 const TOOL = TOOLS.find((t) => t.path === '/hash')!
 
@@ -60,9 +61,7 @@ export default function HashPage() {
       <header className="page-header">
         <h1 className="page-title">{TOOL.name}</h1>
         <div className="header-actions">
-          <button className="btn btn-secondary" onClick={handleClear}>
-            清空
-          </button>
+          <Button onClick={handleClear}>清空</Button>
         </div>
       </header>
 

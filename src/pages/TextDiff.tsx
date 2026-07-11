@@ -3,6 +3,7 @@ import { DiffEditor, type DiffOnMount } from '@monaco-editor/react'
 import type { editor } from 'monaco-editor'
 import { useSeo } from '@/hooks/useSeo'
 import { TOOLS } from '@/tools'
+import Button from '@/components/Button'
 
 const TOOL = TOOLS.find((t) => t.path === '/diff')!
 
@@ -64,8 +65,8 @@ export default function TextDiffPage() {
       <header className="page-header">
         <h1 className="page-title">{TOOL.name}</h1>
         <div className="header-actions">
-          <button className="btn btn-secondary" onClick={handleSwap}>交换</button>
-          <button className="btn btn-secondary" onClick={handleClear}>清空</button>
+          <Button onClick={handleSwap}>交换</Button>
+          <Button onClick={handleClear}>清空</Button>
         </div>
       </header>
 

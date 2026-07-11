@@ -2,6 +2,8 @@ import { useState, useMemo, useCallback } from 'react'
 import { parseJson, fixJson } from '@/utils/jsonFix'
 import { useSeo } from '@/hooks/useSeo'
 import { TOOLS } from '@/tools'
+import Button from '@/components/Button'
+import ToggleGroup from '@/components/ToggleGroup'
 
 const TOOL = TOOLS.find((t) => t.path === '/json')!
 
@@ -164,39 +166,32 @@ export default function JsonToolPage() {
       <header className="page-header">
         <h1 className="page-title">{TOOL.name}</h1>
         <div className="header-actions">
-          <button className="btn btn-secondary" onClick={handleFormat} disabled={!parsed.ok}>
+          <Button onClick={handleFormat} disabled={!parsed.ok}>
             格式化
-          </button>
-          <button className="btn btn-secondary" onClick={handleMinify} disabled={!parsed.ok}>
+          </Button>
+          <Button onClick={handleMinify} disabled={!parsed.ok}>
             压缩
-          </button>
-          <button
-            className="btn btn-secondary"
+          </Button>
+          <Button
             onClick={() => handleCopy(viewMode === 'formatted' ? formatted : minified)}
             disabled={!parsed.ok}
           >
             复制结果
-          </button>
+          </Button>
           {!parsed.ok && (
-            <button className="btn btn-primary" onClick={handleFix}>
+            <Button variant="primary" onClick={handleFix}>
               自动修复
-            </button>
+            </Button>
           )}
           {parsed.ok && (
-            <div className="view-toggle">
-              <button
-                className={`toggle-btn ${viewMode === 'formatted' ? 'active' : ''}`}
-                onClick={() => setViewMode('formatted')}
-              >
-                格式化
-              </button>
-              <button
-                className={`toggle-btn ${viewMode === 'tree' ? 'active' : ''}`}
-                onClick={() => setViewMode('tree')}
-              >
-                树形
-              </button>
-            </div>
+            <ToggleGroup
+              value={viewMode}
+              onChange={setViewMode}
+              options={[
+                { value: 'formatted', label: '格式化' },
+                { value: 'tree', label: '树形' },
+              ]}
+            />
           )}
         </div>
       </header>

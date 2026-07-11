@@ -4,6 +4,7 @@ import { exportSvg, exportPng } from '@/utils/export'
 import { DEFAULT_CONTENT } from '@/utils/defaultContent'
 import { useSeo } from '@/hooks/useSeo'
 import { TOOLS } from '@/tools'
+import Button from '@/components/Button'
 
 const TOOL = TOOLS.find((t) => t.path === '/editor')!
 
@@ -50,20 +51,12 @@ export default function EditorPage() {
           <span className="chart-count">
             {mermaidCount > 0 ? `${mermaidCount} 个图表` : '暂无图表'}
           </span>
-          <button
-            className="btn btn-secondary"
-            onClick={handleExportAllSvg}
-            disabled={mermaidCount === 0}
-          >
+          <Button onClick={handleExportAllSvg} disabled={mermaidCount === 0}>
             导出全部 SVG
-          </button>
-          <button
-            className="btn btn-primary"
-            onClick={handleExportAllPng}
-            disabled={mermaidCount === 0}
-          >
+          </Button>
+          <Button variant="primary" onClick={handleExportAllPng} disabled={mermaidCount === 0}>
             导出全部 PNG
-          </button>
+          </Button>
         </div>
       </header>
 

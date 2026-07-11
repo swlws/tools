@@ -4,6 +4,8 @@ import jsQR from 'jsqr'
 import { useSeo } from '@/hooks/useSeo'
 import { TOOLS } from '@/tools'
 import CopyButton from '@/components/CopyButton'
+import Button from '@/components/Button'
+import ToggleGroup from '@/components/ToggleGroup'
 
 const TOOL = TOOLS.find((t) => t.path === '/qrcode')!
 
@@ -191,36 +193,22 @@ export default function QrCodePage() {
         <div className="header-actions">
           {mode === 'generate' && (
             <>
-              <button
-                className="btn btn-secondary"
-                onClick={handleDownloadPng}
-                disabled={downloadDisabled}
-              >
+              <Button onClick={handleDownloadPng} disabled={downloadDisabled}>
                 下载 PNG
-              </button>
-              <button
-                className="btn btn-secondary"
-                onClick={handleDownloadSvg}
-                disabled={downloadDisabled}
-              >
+              </Button>
+              <Button onClick={handleDownloadSvg} disabled={downloadDisabled}>
                 下载 SVG
-              </button>
+              </Button>
             </>
           )}
-          <div className="view-toggle">
-            <button
-              className={`toggle-btn ${mode === 'generate' ? 'active' : ''}`}
-              onClick={() => setMode('generate')}
-            >
-              生成
-            </button>
-            <button
-              className={`toggle-btn ${mode === 'decode' ? 'active' : ''}`}
-              onClick={() => setMode('decode')}
-            >
-              解析
-            </button>
-          </div>
+          <ToggleGroup
+            value={mode}
+            onChange={setMode}
+            options={[
+              { value: 'generate', label: '生成' },
+              { value: 'decode', label: '解析' },
+            ]}
+          />
         </div>
       </header>
 

@@ -2,6 +2,8 @@ import { useState, useCallback, useEffect } from 'react'
 import { useSeo } from '@/hooks/useSeo'
 import { TOOLS } from '@/tools'
 import CopyButton from '@/components/CopyButton'
+import Button from '@/components/Button'
+import Toggle from '@/components/Toggle'
 
 const TOOL = TOOLS.find((t) => t.path === '/uuid')!
 
@@ -64,27 +66,13 @@ export default function UuidPage() {
             value={count}
             onChange={(e) => handleCountChange(e.target.value)}
           />
-          <div className="view-toggle">
-            <button
-              className={`toggle-btn ${upper ? 'active' : ''}`}
-              onClick={() => setUpper((v) => !v)}
-            >
-              大写
-            </button>
-            <button
-              className={`toggle-btn ${noDash ? 'active' : ''}`}
-              onClick={() => setNoDash((v) => !v)}
-            >
-              去连字符
-            </button>
-          </div>
+          <Toggle pressed={upper} label="大写" onToggle={setUpper} />
+          <Toggle pressed={noDash} label="去连字符" onToggle={setNoDash} />
           <CopyButton text={allText} disabled={shown.length === 0} />
-          <button className="btn btn-secondary" onClick={() => generate(count)}>
-            重新生成
-          </button>
-          <button className="btn" onClick={() => generate(count)}>
+          <Button onClick={() => generate(count)}>重新生成</Button>
+          <Button variant="primary" onClick={() => generate(count)}>
             生成
-          </button>
+          </Button>
         </div>
       </header>
 

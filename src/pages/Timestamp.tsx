@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { useSeo } from '@/hooks/useSeo'
 import { TOOLS } from '@/tools'
 import CopyButton from '@/components/CopyButton'
+import ToggleGroup from '@/components/ToggleGroup'
 
 const TOOL = TOOLS.find((t) => t.path === '/timestamp')!
 
@@ -103,20 +104,14 @@ export default function TimestampPage() {
         <h1 className="page-title">{TOOL.name}</h1>
         <div className="header-actions">
           <span className="ts-zone-label">时区</span>
-          <div className="view-toggle">
-            <button
-              className={`toggle-btn ${zone === 'local' ? 'active' : ''}`}
-              onClick={() => setZone('local')}
-            >
-              本地
-            </button>
-            <button
-              className={`toggle-btn ${zone === 'utc' ? 'active' : ''}`}
-              onClick={() => setZone('utc')}
-            >
-              UTC
-            </button>
-          </div>
+          <ToggleGroup
+            value={zone}
+            onChange={setZone}
+            options={[
+              { value: 'local', label: '本地' },
+              { value: 'utc', label: 'UTC' },
+            ]}
+          />
         </div>
       </header>
 

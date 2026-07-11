@@ -2,6 +2,8 @@ import { useState, useMemo, useCallback } from 'react'
 import { useSeo } from '@/hooks/useSeo'
 import { TOOLS } from '@/tools'
 import CopyButton from '@/components/CopyButton'
+import Button from '@/components/Button'
+import ToggleGroup from '@/components/ToggleGroup'
 
 const TOOL = TOOLS.find((t) => t.path === '/url')!
 
@@ -43,26 +45,16 @@ export default function UrlPage() {
       <header className="page-header">
         <h1 className="page-title">{TOOL.name}</h1>
         <div className="header-actions">
-          <div className="view-toggle">
-            <button
-              className={`toggle-btn ${mode === 'encode' ? 'active' : ''}`}
-              onClick={() => setMode('encode')}
-            >
-              编码
-            </button>
-            <button
-              className={`toggle-btn ${mode === 'decode' ? 'active' : ''}`}
-              onClick={() => setMode('decode')}
-            >
-              解码
-            </button>
-          </div>
-          <button className="btn btn-secondary" onClick={handleSwap}>
-            交换
-          </button>
-          <button className="btn btn-secondary" onClick={handleClear}>
-            清空
-          </button>
+          <ToggleGroup
+            value={mode}
+            onChange={setMode}
+            options={[
+              { value: 'encode', label: '编码' },
+              { value: 'decode', label: '解码' },
+            ]}
+          />
+          <Button onClick={handleSwap}>交换</Button>
+          <Button onClick={handleClear}>清空</Button>
         </div>
       </header>
 
