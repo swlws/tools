@@ -1,0 +1,20 @@
+src/pages/Base64.tsx
+  s_e4febbb74ae340::t_02db1decca389b 30
+  s_e4febbb74ae340::t_25b77c8a01be8c 10-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "4778009718465e1904111df05d13b5c3c30cf1de",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
