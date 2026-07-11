@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom'
 import HomePage from '@/pages/Home'
 import EditorPage from '@/pages/Editor'
@@ -17,10 +17,12 @@ import RadixPage from '@/pages/Radix'
 import CronPage from '@/pages/Cron'
 import YamlJsonPage from '@/pages/YamlJson'
 import Logo from '@/components/Logo'
-import { groupedTools } from '@/tools'
+import { groupedTools, TOOLS } from '@/tools'
+import { recordToolUse } from '@/hooks/useToolUsage'
 import './App.css'
 
 const GROUPS = groupedTools()
+const TOOL_PATHS = new Set(TOOLS.map((t) => t.path))
 
 function App() {
   const location = useLocation()
@@ -28,6 +30,12 @@ function App() {
   // Category whose dropdown is force-collapsed after a selection, until the
   // pointer leaves it (otherwise CSS :hover keeps re-opening the menu).
   const [collapsed, setCollapsed] = useState<string | null>(null)
+
+  // Count a visit whenever the route lands on a tool page, regardless of
+  // entry point (nav, homepage card, or a direct URL).
+  useEffect(() => {
+    if (TOOL_PATHS.has(location.pathname)) recordToolUse(location.pathname)
+  }, [location.pathname])
 
   const activeCategory = GROUPS.find((g) =>
     g.tools.some((t) => t.path === location.pathname),

@@ -2,13 +2,18 @@ import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { TOOLS, groupedTools, type Tool } from '@/tools'
 import { useSeo } from '@/hooks/useSeo'
+import { useToolUsage } from '@/hooks/useToolUsage'
 import Logo from '@/components/Logo'
+
+const TOP_COUNT = 3
 
 function ToolCard({ tool }: { tool: Tool }) {
   return (
     <Link to={tool.path} className="tool-card">
-      <span className="tool-card-icon">{tool.icon}</span>
-      <span className="tool-card-name">{tool.name}</span>
+      <span className="tool-card-head">
+        <span className="tool-card-icon">{tool.icon}</span>
+        <span className="tool-card-name">{tool.name}</span>
+      </span>
       <span className="tool-card-desc">{tool.description}</span>
     </Link>
   )
@@ -18,6 +23,7 @@ export default function HomePage() {
   useSeo('首页', '开发者工具箱:Markdown 编辑器、JSON 可视化、文本对比、时间戳工具、二维码,免费在线使用。')
 
   const [query, setQuery] = useState('')
+  const { counts } = useToolUsage()
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -29,6 +35,13 @@ export default function HomePage() {
 
   const groups = useMemo(() => groupedTools(filtered), [filtered])
   const searching = query.trim() !== ''
+
+  // Top-N most-opened tools; empty until the user has opened something.
+  const topTools = useMemo(() => {
+    return TOOLS.filter((t) => (counts[t.path] ?? 0) > 0)
+      .sort((a, b) => (counts[b.path] ?? 0) - (counts[a.path] ?? 0))
+      .slice(0, TOP_COUNT)
+  }, [counts])
 
   return (
     <div className="page home-page">
@@ -55,16 +68,28 @@ export default function HomePage() {
             ))}
           </div>
         ) : (
-          groups.map((group) => (
-            <section key={group.key} className="home-section">
-              <h2 className="home-section-title">{group.label}</h2>
-              <div className="home-grid">
-                {group.tools.map((tool) => (
-                  <ToolCard key={tool.path} tool={tool} />
-                ))}
-              </div>
-            </section>
-          ))
+          <>
+            {topTools.length > 0 && (
+              <section className="home-section">
+                <h2 className="home-section-title">高频使用</h2>
+                <div className="home-grid">
+                  {topTools.map((tool) => (
+                    <ToolCard key={tool.path} tool={tool} />
+                  ))}
+                </div>
+              </section>
+            )}
+            {groups.map((group) => (
+              <section key={group.key} className="home-section">
+                <h2 className="home-section-title">{group.label}</h2>
+                <div className="home-grid">
+                  {group.tools.map((tool) => (
+                    <ToolCard key={tool.path} tool={tool} />
+                  ))}
+                </div>
+              </section>
+            ))}
+          </>
         )}
       </div>
     </div>
