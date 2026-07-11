@@ -6,11 +6,12 @@ export interface Category {
 }
 
 // Display order for both the nav dropdowns and the homepage sections.
+// Ordered by real-world usage frequency for developers, most-used first.
 export const CATEGORIES: Category[] = [
-  { key: 'edit', label: '编辑预览' },
   { key: 'convert', label: '格式转换' },
   { key: 'compare', label: '对比校验' },
   { key: 'generate', label: '生成工具' },
+  { key: 'edit', label: '编辑预览' },
 ]
 
 export interface Tool {
