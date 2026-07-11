@@ -1,0 +1,45 @@
+src/pages/JsonTool.tsx
+  s_e4febbb74ae340::t_9e01cc18f8a5b5 3-6
+  s_e4febbb74ae340::t_1bf9b8f849b196 120
+src/tools.ts
+  s_e4febbb74ae340::t_ae5f0ac025ffde 1-43
+public/sitemap.xml
+  s_e4febbb74ae340::t_97fe6bff18f50b 1-28
+src/pages/Home.tsx
+  s_e4febbb74ae340::t_5ccb91b7dd1251 1-50
+src/pages/Timestamp.tsx
+  s_e4febbb74ae340::t_ae867bea8631fe 71
+  s_e4febbb74ae340::t_91d0f2229e2d42 2-5
+src/pages/Editor.tsx
+  s_e4febbb74ae340::t_b7e1a0080a2201 26
+  s_e4febbb74ae340::t_154d54db3640a0 5-8
+src/App.tsx
+  s_e4febbb74ae340::t_b9431a7a3d9e37 1-2,7,14,18-26,29,39
+src/pages/TextDiff.tsx
+  s_e4febbb74ae340::t_1de9fc7e0c4030 4-7
+  s_e4febbb74ae340::t_ef1da740bad3ea 32
+public/robots.txt
+  s_e4febbb74ae340::t_dd9b2f7daf4470 1-4
+src/hooks/useSeo.ts
+  s_e4febbb74ae340::t_6a542071079fec 1-23
+src/App.css
+  s_e4febbb74ae340::t_090e8f816e144c 776-878
+index.html
+  s_e4febbb74ae340::t_f4250d555669ab 7-57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "ac399f8761888a6a369f213b6642e25a9249a763",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
