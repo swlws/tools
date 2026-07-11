@@ -2,14 +2,14 @@ import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { TOOLS, groupedTools, type Tool } from '@/tools'
 import { useSeo } from '@/hooks/useSeo'
-import { useToolUsage } from '@/hooks/useToolUsage'
+import { useToolUsage, recordToolUse } from '@/hooks/useToolUsage'
 import Logo from '@/components/Logo'
 
-const TOP_COUNT = 3
+const TOP_COUNT = 4
 
 function ToolCard({ tool }: { tool: Tool }) {
   return (
-    <Link to={tool.path} className="tool-card">
+    <Link to={tool.path} className="tool-card" onClick={() => recordToolUse(tool.path)}>
       <span className="tool-card-head">
         <span className="tool-card-icon">{tool.icon}</span>
         <span className="tool-card-name">{tool.name}</span>
