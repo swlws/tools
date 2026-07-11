@@ -1,0 +1,39 @@
+src/hooks/useTheme.ts
+  s_e4febbb74ae340::t_84ae97b36fc72b 1-69
+src/App.css
+  s_e4febbb74ae340::t_971b1fb845c74a 469-494
+  s_e4febbb74ae340::t_3548615cd0d749 1896
+  s_e4febbb74ae340::t_f51356f545bcc4 72,82,211,234-235,246,294,628,634,651-653,657-659,663-665,670,706,766,866,1806,1897,2089-2090,2094,2213-2214,2218,2223,2315
+  s_e4febbb74ae340::t_59d40523cb19d6 83-84,89-90,210,459,559,865,867,933,1019,1065,1180,2081,2095,2126,2205,2219,2258
+index.html
+  s_e4febbb74ae340::t_d465632cb98e6f 7-21
+src/App.tsx
+  s_e4febbb74ae340::t_d088029a603b9f 87-88
+  s_e4febbb74ae340::t_d9be277a2e6301 20
+src/components/ThemeToggle.tsx
+  s_e4febbb74ae340::t_0a4823785c0acc 1-29
+src/index.css
+  s_e4febbb74ae340::t_3d8ca076739a51 150,152
+  s_e4febbb74ae340::t_781333e474eba0 99,104-106,158-159
+  s_e4febbb74ae340::t_4872c93e14e9ea 32-68
+  s_e4febbb74ae340::t_9b71dba44dc6aa 125-126
+  s_e4febbb74ae340::t_1f4684ac55fb96 107-124,127-149,151,153-157
+  s_e4febbb74ae340::t_2befeda5425644 176-177,183,196,203
+  s_e4febbb74ae340::t_720f84082903d4 100-103
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "bdf5e2518f4accac053abbef9e2dba707ddffb4c",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
