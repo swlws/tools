@@ -1,0 +1,42 @@
+src/tools.ts
+  s_e4febbb74ae340::t_4caee0d3eebf44 82-126
+public/sitemap.xml
+  s_e4febbb74ae340::t_2e985943f418f2 38-62
+src/pages/Color.tsx
+  s_e4febbb74ae340::t_49d774f98149c7 147-151,157-161,167-171
+  s_e4febbb74ae340::t_f4be3f095dec06 1-146,152-156,162-166,172-281
+src/pages/Uuid.tsx
+  s_e4febbb74ae340::t_8baac38284087e 1-106
+src/pages/Hash.tsx
+  s_e4febbb74ae340::t_b6ed3f004cae36 1-106
+src/App.tsx
+  s_e4febbb74ae340::t_66ad6c7a55b358 114-118
+  s_e4febbb74ae340::t_6a0f3e1a93561c 10-14
+src/pages/Jwt.tsx
+  s_e4febbb74ae340::t_338e0351ef5a05 1-84,91-92,94-164
+  s_e4febbb74ae340::t_ee3413d758968a 85-90
+  s_e4febbb74ae340::t_072e3f65870735 93
+src/App.css
+  s_e4febbb74ae340::t_c9df65893ba45a 1273-1679
+README.md
+  s_e4febbb74ae340::t_d2f4b2a5bd707b 17-21
+src/pages/Url.tsx
+  s_e4febbb74ae340::t_1ace761228ac8c 1-9,12-14,16-108
+  s_e4febbb74ae340::t_88ee9adda2599f 10-11,15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "fd612ced09833679b899b8e096abcd748ce3d682",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
