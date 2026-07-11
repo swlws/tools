@@ -1,0 +1,21 @@
+ai-native-spec/skills/ai-commit/SKILL.md
+  s_e4febbb74ae340::t_2a0a1fdc6e0b91 1-53
+.claude/skills/ai-commit
+  s_e4febbb74ae340::t_060de94feb3173 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "f1eeaeb68a9dbb8353c8f5fb62cbd35022a68a4f",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
