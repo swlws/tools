@@ -1,0 +1,24 @@
+ai-native-spec/skills/tools-dev-skill/SKILL.md
+  s_e4febbb74ae340::t_a5e842f1e2d5e4 83-101
+  s_e4febbb74ae340::t_98f1f4c6b5a619 1-82
+.gitignore
+  s_e4febbb74ae340::t_b7ed617957697b 15
+.claude/skills/tools-dev-skill
+  s_e4febbb74ae340::t_8ac3cda57607f3 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "c2752283a750e7d8af65eefa9f3695b74172e4d9",
+  "prompts": {},
+  "sessions": {
+    "s_e4febbb74ae340": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f61394-e946-46e8-8262-f35c7b7df492",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
