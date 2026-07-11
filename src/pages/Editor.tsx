@@ -2,6 +2,10 @@ import { useState, useMemo } from 'react'
 import MarkdownPreview from '@/components/MarkdownPreview'
 import { exportSvg, exportPng } from '@/utils/export'
 import { DEFAULT_CONTENT } from '@/utils/defaultContent'
+import { useSeo } from '@/hooks/useSeo'
+import { TOOLS } from '@/tools'
+
+const TOOL = TOOLS.find((t) => t.path === '/editor')!
 
 function countMermaidBlocks(content: string): number {
   const matches = content.match(/```mermaid\b/g)
@@ -19,6 +23,7 @@ function getAllMermaidSvgs(): Map<string, string> {
 }
 
 export default function EditorPage() {
+  useSeo(TOOL.name, TOOL.description)
   const [content, setContent] = useState(DEFAULT_CONTENT)
 
   const mermaidCount = useMemo(() => countMermaidBlocks(content), [content])

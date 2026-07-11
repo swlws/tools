@@ -1,5 +1,9 @@
 import { useState, useMemo, useCallback } from 'react'
 import { parseJson, fixJson } from '@/utils/jsonFix'
+import { useSeo } from '@/hooks/useSeo'
+import { TOOLS } from '@/tools'
+
+const TOOL = TOOLS.find((t) => t.path === '/json')!
 
 type ViewMode = 'formatted' | 'tree'
 
@@ -113,6 +117,7 @@ const SAMPLE_JSON = `{
 }`
 
 export default function JsonToolPage() {
+  useSeo(TOOL.name, TOOL.description)
   const [input, setInput] = useState(SAMPLE_JSON)
   const [viewMode, setViewMode] = useState<ViewMode>('formatted')
 

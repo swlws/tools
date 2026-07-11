@@ -1,33 +1,32 @@
-import { Routes, Route, NavLink, Navigate } from 'react-router-dom'
+import { Routes, Route, NavLink } from 'react-router-dom'
+import HomePage from '@/pages/Home'
 import EditorPage from '@/pages/Editor'
 import JsonToolPage from '@/pages/JsonTool'
 import TextDiffPage from '@/pages/TextDiff'
 import TimestampPage from '@/pages/Timestamp'
+import { TOOLS } from '@/tools'
 import './App.css'
 
 function App() {
   return (
     <>
       <nav className="nav-bar">
-        <span className="nav-brand">
+        <NavLink to="/" className="nav-brand">
           <span className="nav-brand-dot" />
           开发者工具箱
-        </span>
-        <NavLink to="/editor" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          Markdown 编辑器
         </NavLink>
-        <NavLink to="/json" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          JSON 工具
-        </NavLink>
-        <NavLink to="/diff" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          文本对比
-        </NavLink>
-        <NavLink to="/timestamp" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          时间戳工具
-        </NavLink>
+        {TOOLS.map((tool) => (
+          <NavLink
+            key={tool.path}
+            to={tool.path}
+            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+          >
+            {tool.navLabel}
+          </NavLink>
+        ))}
       </nav>
       <Routes>
-        <Route path="/" element={<Navigate to="/editor" replace />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/editor" element={<EditorPage />} />
         <Route path="/json" element={<JsonToolPage />} />
         <Route path="/diff" element={<TextDiffPage />} />

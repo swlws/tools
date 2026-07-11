@@ -1,6 +1,10 @@
 import { useState, useCallback, useRef } from 'react'
 import { DiffEditor, type OnMount } from '@monaco-editor/react'
 import type { editor } from 'monaco-editor'
+import { useSeo } from '@/hooks/useSeo'
+import { TOOLS } from '@/tools'
+
+const TOOL = TOOLS.find((t) => t.path === '/diff')!
 
 const LEFT_DEFAULT = `function greet(name) {
   console.log('Hello, ' + name);
@@ -25,6 +29,7 @@ for (const item of items) {
 export default greet;`
 
 export default function TextDiffPage() {
+  useSeo(TOOL.name, TOOL.description)
   const [original, setOriginal] = useState(LEFT_DEFAULT)
   const [modified, setModified] = useState(RIGHT_DEFAULT)
   const editorRef = useRef<editor.IStandaloneDiffEditor | null>(null)

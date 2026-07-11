@@ -1,4 +1,8 @@
 import { useState, useEffect, useMemo, useCallback } from 'react'
+import { useSeo } from '@/hooks/useSeo'
+import { TOOLS } from '@/tools'
+
+const TOOL = TOOLS.find((t) => t.path === '/timestamp')!
 
 type Zone = 'local' | 'utc'
 
@@ -64,6 +68,7 @@ function CopyButton({ text, disabled }: { text: string; disabled?: boolean }) {
 }
 
 export default function TimestampPage() {
+  useSeo(TOOL.name, TOOL.description)
   const [zone, setZone] = useState<Zone>('local')
   const [now, setNow] = useState(() => 0)
 
