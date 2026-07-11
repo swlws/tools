@@ -1,4 +1,5 @@
 import { useState, useMemo, useCallback } from 'react'
+import { parseJson, fixJson } from '@/utils/jsonFix'
 
 type ViewMode = 'formatted' | 'tree'
 
@@ -96,59 +97,58 @@ function TreeNodeRow({ node, defaultExpanded }: { node: TreeNode; defaultExpande
 }
 
 const SAMPLE_JSON = `{
-  "name": "示例项目",
+  // 项目配置
+  name: '示例项目',
   "version": "1.0.0",
   "private": true,
   "dependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "mermaid": "^11.16.0"
+    "mermaid": "^11.16.0",  // 尾逗号
   },
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build"
-  },
-  "keywords": ["json", "visualizer", "tool"],
+  "keywords": ["json", "visualizer", "tool",],
   "count": 42,
   "deprecated": false,
-  "license": null
+  "license": null,
 }`
 
 export default function JsonToolPage() {
   const [input, setInput] = useState(SAMPLE_JSON)
   const [viewMode, setViewMode] = useState<ViewMode>('formatted')
 
-  const parsed = useMemo(() => {
-    try {
-      const data = JSON.parse(input)
-      return { ok: true as const, data }
-    } catch (err) {
-      return { ok: false as const, error: (err as Error).message }
-    }
-  }, [input])
+  const result = useMemo(() => parseJson(input), [input])
+  const parsed = useMemo(() =>
+    result.error === null
+      ? { ok: true as const, data: result.data, fixed: result.fixed }
+      : { ok: false as const, error: result.error, originalError: result.originalError }
+  , [result])
 
   const formatted = useMemo(() => {
     if (!parsed.ok) return ''
     return JSON.stringify(parsed.data, null, 2)
-  }, [parsed])
+  }, [parsed.ok, parsed.data])
 
   const minified = useMemo(() => {
     if (!parsed.ok) return ''
     return JSON.stringify(parsed.data)
-  }, [parsed])
+  }, [parsed.ok, parsed.data])
 
   const tree = useMemo(() => {
     if (!parsed.ok) return null
     return buildTree(parsed.data, 'root', 0)
-  }, [parsed])
+  }, [parsed.ok, parsed.data])
 
   const handleFormat = useCallback(() => {
     if (parsed.ok) setInput(JSON.stringify(parsed.data, null, 2))
-  }, [parsed])
+  }, [parsed.ok, parsed.data])
 
   const handleMinify = useCallback(() => {
     if (parsed.ok) setInput(JSON.stringify(parsed.data))
-  }, [parsed])
+  }, [parsed.ok, parsed.data])
+
+  const handleFix = useCallback(() => {
+    setInput(fixJson(input))
+  }, [input])
 
   const handleCopy = useCallback(async (text: string) => {
     await navigator.clipboard.writeText(text)
@@ -172,20 +172,27 @@ export default function JsonToolPage() {
           >
             复制结果
           </button>
-          <div className="view-toggle">
-            <button
-              className={`toggle-btn ${viewMode === 'formatted' ? 'active' : ''}`}
-              onClick={() => setViewMode('formatted')}
-            >
-              格式化
+          {!parsed.ok && (
+            <button className="btn btn-primary" onClick={handleFix}>
+              自动修复
             </button>
-            <button
-              className={`toggle-btn ${viewMode === 'tree' ? 'active' : ''}`}
-              onClick={() => setViewMode('tree')}
-            >
-              树形
-            </button>
-          </div>
+          )}
+          {parsed.ok && (
+            <div className="view-toggle">
+              <button
+                className={`toggle-btn ${viewMode === 'formatted' ? 'active' : ''}`}
+                onClick={() => setViewMode('formatted')}
+              >
+                格式化
+              </button>
+              <button
+                className={`toggle-btn ${viewMode === 'tree' ? 'active' : ''}`}
+                onClick={() => setViewMode('tree')}
+              >
+                树形
+              </button>
+            </div>
+          )}
         </div>
       </header>
 
@@ -194,13 +201,14 @@ export default function JsonToolPage() {
           <div className="pane-header">
             <span className="pane-label">输入</span>
             {!parsed.ok && <span className="error-badge">解析错误</span>}
-            {parsed.ok && <span className="success-badge">有效 JSON</span>}
+            {parsed.ok && parsed.fixed && <span className="warn-badge">已自动修复</span>}
+            {parsed.ok && !parsed.fixed && <span className="success-badge">有效 JSON</span>}
           </div>
           <textarea
             className="json-textarea"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="在此粘贴 JSON 字符串..."
+            placeholder="在此粘贴 JSON 字符串...&#10;支持单引号、无引号键、尾逗号、注释等非标准格式"
             spellCheck={false}
           />
         </section>
@@ -208,12 +216,16 @@ export default function JsonToolPage() {
         <section className="json-pane">
           <div className="pane-header">
             <span className="pane-label">输出</span>
+            {parsed.ok && parsed.fixed && (
+              <span className="fix-hint">输入为非标准 JSON，已自动修复后解析</span>
+            )}
           </div>
           <div className="json-output">
             {!parsed.ok && (
               <div className="json-error">
                 <p className="error-title">JSON 解析失败</p>
-                <p className="error-msg">{parsed.error}</p>
+                <p className="error-msg">{parsed.originalError || parsed.error}</p>
+                <p className="error-hint">点击「自动修复」尝试修复常见格式问题</p>
               </div>
             )}
             {parsed.ok && viewMode === 'formatted' && (
