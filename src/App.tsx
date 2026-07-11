@@ -7,6 +7,11 @@ import TextDiffPage from '@/pages/TextDiff'
 import TimestampPage from '@/pages/Timestamp'
 import QrCodePage from '@/pages/QrCode'
 import Base64Page from '@/pages/Base64'
+import UrlPage from '@/pages/Url'
+import JwtPage from '@/pages/Jwt'
+import HashPage from '@/pages/Hash'
+import UuidPage from '@/pages/Uuid'
+import ColorPage from '@/pages/Color'
 import Logo from '@/components/Logo'
 import { groupedTools } from '@/tools'
 import './App.css'
@@ -106,6 +111,11 @@ function App() {
         <Route path="/timestamp" element={<TimestampPage />} />
         <Route path="/qrcode" element={<QrCodePage />} />
         <Route path="/base64" element={<Base64Page />} />
+        <Route path="/url" element={<UrlPage />} />
+        <Route path="/jwt" element={<JwtPage />} />
+        <Route path="/hash" element={<HashPage />} />
+        <Route path="/uuid" element={<UuidPage />} />
+        <Route path="/color" element={<ColorPage />} />
       </Routes>
     </>
   )
