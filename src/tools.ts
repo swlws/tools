@@ -40,4 +40,12 @@ export const TOOLS: Tool[] = [
     keywords: ['时间戳', 'timestamp', 'unix', '日期', '时区', '时间差', '转换'],
     icon: '🕐',
   },
+  {
+    path: '/qrcode',
+    name: '二维码工具',
+    navLabel: '二维码',
+    description: '将文本或链接生成二维码并导出 PNG/SVG,也可上传图片解析二维码内容。',
+    keywords: ['二维码', 'qrcode', 'qr', '生成', '解析', '解码', '识别', '链接', 'url', 'png', 'svg', '导出'],
+    icon: '▦',
+  },
 ]

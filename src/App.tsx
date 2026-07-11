@@ -4,6 +4,7 @@ import EditorPage from '@/pages/Editor'
 import JsonToolPage from '@/pages/JsonTool'
 import TextDiffPage from '@/pages/TextDiff'
 import TimestampPage from '@/pages/Timestamp'
+import QrCodePage from '@/pages/QrCode'
 import Logo from '@/components/Logo'
 import { TOOLS } from '@/tools'
 import './App.css'
@@ -32,6 +33,7 @@ function App() {
         <Route path="/json" element={<JsonToolPage />} />
         <Route path="/diff" element={<TextDiffPage />} />
         <Route path="/timestamp" element={<TimestampPage />} />
+        <Route path="/qrcode" element={<QrCodePage />} />
       </Routes>
     </>
   )
