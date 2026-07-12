@@ -2,7 +2,7 @@
 
 常用的前端与开发辅助工具集合,无需登录、纯本地运行(数据不离开浏览器)。
 
-在线访问:<https://swlws.github.io/tools/>
+在线访问:<https://swlws.github.io/dev-tools/>
 
 ## 功能
 
@@ -53,4 +53,4 @@ npm run dev      # 启动开发服务器
 
 首次部署需在仓库 **Settings → Pages → Source** 选择 **GitHub Actions**。
 
-> 站点作为项目页发布在 `/tools/` 路径下,对应 `vite.config.ts` 中的 `base: '/tools/'`。
+> 站点作为项目页发布在 `/dev-tools/` 路径下,对应 `vite.config.ts` 中的 `base: '/dev-tools/'`。

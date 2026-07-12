@@ -2,7 +2,7 @@
 <!-- HashRouter 部署:工具页真实地址为 #/xxx,爬虫不索引 hash 片段,故 sitemap 只列可索引的首页。 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://swlws.github.io/tools/</loc>
+    <loc>https://swlws.github.io/dev-tools/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

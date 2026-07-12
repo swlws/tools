@@ -64,13 +64,13 @@ description: 在「开发者工具箱」工程（React 19 + TypeScript + Vite）
 
 ## SEO 规范
 
-站点用 `HashRouter` 部署在 `https://swlws.github.io/tools/`，工具页真实地址是 `#/xxx`。**hash 片段不会被爬虫当独立页面索引**，因此 SEO 只优化首页这一个可索引页面（方案 A，务实取舍；真正让子页可索引需改 BrowserRouter + 预渲染，成本高、暂不做）。
+站点用 `HashRouter` 部署在 `https://swlws.github.io/dev-tools/`，工具页真实地址是 `#/xxx`。**hash 片段不会被爬虫当独立页面索引**，因此 SEO 只优化首页这一个可索引页面（方案 A，务实取舍；真正让子页可索引需改 BrowserRouter + 预渲染，成本高、暂不做）。
 
 - **运行时（SPA 内切换）**：每个页面首行调 `useSeo(TOOL.name, TOOL.description)`，动态改 `document.title` 与 description/og。这只影响已加载后的切换，爬虫首屏抓取看不到。
 - **静态首屏（爬虫抓取）**：`index.html` 是静态文件，**无法 import `tools.ts`**，有 3 处需手工覆盖全部工具，新增工具时务必同步：
   1. `<meta name="description">` — 概括并列举主要工具名
   2. `<meta name="keywords">` — 补齐新工具关键词
-  3. JSON-LD `hasPart` — 每个工具一条 `SoftwareApplication`，`url` 用**绝对地址** `https://swlws.github.io/tools/#/xxx`
+  3. JSON-LD `hasPart` — 每个工具一条 `SoftwareApplication`，`url` 用**绝对地址** `https://swlws.github.io/dev-tools/#/xxx`
   （`og:description` 一并同步）
 - **sitemap / robots**：`public/sitemap.xml` **只列首页**、`<loc>` 用绝对 URL，**不要**为 hash 子路由加条目（爬虫抓不到，等于无效条目）；`public/robots.txt` 的 `Sitemap:` 也用绝对 URL。
 
@@ -87,7 +87,7 @@ description: 在「开发者工具箱」工程（React 19 + TypeScript + Vite）
 
 - 每次改动后跑 `npm run build`（= `tsc -b && vite build`），必须通过再交付
 - 推送到 `master` 后由 `.github/workflows/deploy.yml` 自动构建并发布到 GitHub Pages
-- 工作流用 Node 24；`vite.config.ts` 的 `base: '/tools/'` 对应项目页路径
+- 工作流用 Node 24；`vite.config.ts` 的 `base: '/dev-tools/'` 对应项目页路径
 
 ## 目录约定
 

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://swlws.github.io/tools/sitemap.xml
+Sitemap: https://swlws.github.io/dev-tools/sitemap.xml
