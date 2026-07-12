@@ -1,0 +1,21 @@
+package.json
+  s_5e07326ba22f5e::t_0e4d0d0998782a 2
+package-lock.json
+  s_5e07326ba22f5e::t_5e22eada4e43d6 2,8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "5ab59dfe159cb628b77358f29744ea4e3f19d2a0",
+  "prompts": {},
+  "sessions": {
+    "s_5e07326ba22f5e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef413513-e655-46f8-bee6-efc3c488648f",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
