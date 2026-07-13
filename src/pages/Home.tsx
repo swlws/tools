@@ -4,6 +4,7 @@ import { TOOLS, groupedTools, type Tool } from '@/tools'
 import { useSeo } from '@/hooks/useSeo'
 import { useToolUsage, recordToolUse } from '@/hooks/useToolUsage'
 import Logo from '@/components/Logo'
+import BusuanziStats from '@/components/BusuanziStats'
 
 const TOP_COUNT = 4
 
@@ -89,6 +90,7 @@ export default function HomePage() {
                 </div>
               </section>
             ))}
+            <BusuanziStats />
           </>
         )}
       </div>
