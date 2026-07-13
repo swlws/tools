@@ -1,0 +1,24 @@
+src/components/BusuanziStats.tsx
+  s_2fb3fd8035be22::t_a783b47db850f1 1-24
+src/App.css
+  s_2fb3fd8035be22::t_62904e2b1f1e0d 2412-2421
+src/pages/Home.tsx
+  s_2fb3fd8035be22::t_6762cd9a9180a7 7
+  s_2fb3fd8035be22::t_0cc251a47aed08 93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "55f0ffe371ae2d3a8b0264859aac0a815fabde06",
+  "prompts": {},
+  "sessions": {
+    "s_2fb3fd8035be22": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb1429bd-167f-4fb2-b071-41d0b3f240f5",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "swlws <swlwsgg@gmai.com>"
+    }
+  }
+}
